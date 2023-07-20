@@ -1,3 +1,0 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`the main page > should not change (Snapshot Test) 1`] = `"<!--[--><!-- <h1>Portal</h1> --><!--[--><h1> Musician Zone </h1><button> Concerts </button><h2> Your Concerts </h2><div><div><!--v-if--><!--[--><!--]--></div></div><h2> Wishlist </h2><div><div><!--v-if--><!--[--><!--]--></div></div><!--]--><!--]-->"`;

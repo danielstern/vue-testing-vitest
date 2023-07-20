@@ -1,5 +1,4 @@
 import delay from "delay"
-// import { vi } from "vitest"
 export const getConcerts = async () => {
 	await delay(1000)
 
@@ -35,24 +34,3 @@ export const tickerBuyer = (buyFn) => ({
 		
 	}
 })
-
-if (import.meta.vitest) {
-
-	const { expect, it, vi } = import.meta.vitest
-	it("should get the concerts", async function () {
-		expect((await getConcerts()).length).toBe(3)
-	})
-
-	it("should purchase the ticket", async () => {
-
-		const mock = vi.fn().mockImplementation(buyFn)
-		const buyer = tickerBuyer(mock)
-		const ticket = {name:"Falstaff", price: 100, id:"TICKET_001"}
-		mock.mockImplementationOnce(ticket)
-		buyer.buyTicket(ticket)
-		expect(mock).toHaveBeenCalledTimes(1)
-
-
-	})
-}
-
