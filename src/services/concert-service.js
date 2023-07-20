@@ -27,51 +27,31 @@ export const tickerBuyer = (buyFn) => ({
 	buyTicket: async (ticket) => {
 
 		console.info("purchasing ticket", ticket)
-		buyFn()
-		// await delay(1000)
-		// console.info("do")
+		try {
+			buyFn()
+			alert("Purchased ticket")
+		} catch (e) {}
 		return true
-		// throw new Error(`500 Internal Server Error`)
+		
 	}
 })
 
-
-
-// const buyTicket = async (ticket, ticketAjaxFn = () => {}) => {
-
-// 	console.info("purchasing ticket", ticket)
-// 	ticketAjaxFn()
-// 	await delay(1000)
-// 	// throw new Error(`500 Internal Server Error`)
-// }
-
-
-
-
 if (import.meta.vitest) {
 
-	// import { expect, it } from "vitest"
 	const { expect, it, vi } = import.meta.vitest
-	// const { expect, it, vi } = require('vitest')
-	console.log("IT?", it)
 	it("should get the concerts", async function () {
-
 		expect((await getConcerts()).length).toBe(3)
 	})
 
 	it("should purchase the ticket", async () => {
-		// const mock = vi.spyOn(buyer, "buyTicket")
 
-		// const mock = vi.fn().mockImplementation(buyer, "buyTicket")
 		const mock = vi.fn().mockImplementation(buyFn)
 		const buyer = tickerBuyer(mock)
 		const ticket = {name:"Falstaff", price: 100, id:"TICKET_001"}
 		mock.mockImplementationOnce(ticket)
-		console.info(buyer)
 		buyer.buyTicket(ticket)
 		expect(mock).toHaveBeenCalledTimes(1)
-		// expect(mock).toHaveBeenCalledOnce()
-		// expect(await spy()).toEqual(ticket)
+
 
 	})
 }
