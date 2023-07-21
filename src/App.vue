@@ -12,7 +12,6 @@ const items = ref([]);
 
 
 <template>
-  <!-- <h1>Portal</h1> -->
   <Concerts 
     :items="items" 
   />

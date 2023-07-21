@@ -14,9 +14,5 @@ describe("adjust price", () => {
 		const value = 22.2320
 		adjustPrice(value)
 		expect(spy).toHaveBeenCalledOnce()
-		// spy.mockImplementationOnce(price => price * 10)
-		// const price = adjustPrice(100)
-		// expect(spy).toHaveBeenCalledTimes(2)
-		// expect(price).toEqual("1000.00")
 	})
 })
