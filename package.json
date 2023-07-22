@@ -7,15 +7,16 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test" : "vitest"
+    "test": "vitest"
   },
   "dependencies": {
-    "@vue/server-renderer": "^3.3.4",
     "delay": "^6.0.0",
     "vue": "^3.2.47"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
+    "@vue/server-renderer": "^3.3.4",
+    "@vue/test-utils": "^2.4.0",
     "vite": "^4.2.0",
     "vitest": "^0.32.4"
   }
