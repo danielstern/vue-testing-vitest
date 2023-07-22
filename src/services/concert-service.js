@@ -9,6 +9,18 @@ export const getConcerts = async () => {
 	]
 }
 
+if (import.meta.vitest) {
+	// won't execute in production
+	const { describe, it, expect } = import.meta.vitest
+	describe("Get concert",()=>{
+		it("should return the expected list", async () => {
+			const concerts = await getConcerts()
+			expect(concerts).toHaveLength(3)
+			expect(concerts[0].name).toBe("Maximum Mozart")
+		})
+	})
+}
+
 export const getWishlist = async () => {
 	await delay(1000)
 
