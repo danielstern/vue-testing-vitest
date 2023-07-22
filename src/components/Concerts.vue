@@ -41,6 +41,9 @@ populateWishlist()
   <h2>
     Your Concerts
   </h2>
+  <!-- <h3> -->
+    <!-- The current time is {{new Date().toLocaleDateString()}} -->
+  <!-- </h3> -->
   <div>
     <div>
       <div v-if="shouldShowBookingNotification()">It's Monday, remember to have all booking requests in by 5:00pm.</div>
